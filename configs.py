@@ -13,9 +13,9 @@ if 'DYNO' in environ:
 else:
     ON_HEROKU = False
 BIND_ADRESS = str(getenv('WEB_SERVER_BIND_ADDRESS', '0.0.0.0'))
-FQDN = str(getenv('FQDN', BIND_ADRESS)) if not ON_HEROKU or getenv('FQDN','') else APP_NAME+'.herokuapp.com'
-URL = "https://{}/".format(FQDN) if ON_HEROKU or NO_PORT else \
-    "http://{}:{}/".format(FQDN, PORT)
+FQDN = str(getenv('FQDN', BIND_ADRESS)) if not ON_HEROKU or getenv('FQDN','store-botnew.onrender.com') else APP_NAME+'.herokuapp.com'
+URL = "https://store-botnew.onrender.com/".format(FQDN) if ON_HEROKU or NO_PORT else \
+    "https://store-botnew.onrender.com:store-botnew.onrender.com/".format(FQDN, PORT)
 SLEEP_THRESHOLD = int(environ.get('SLEEP_THRESHOLD', '60'))
 WORKERS = int(environ.get('WORKERS', '4'))
 SESSION_NAME = str(environ.get('SESSION_NAME', 'LazyBot'))
@@ -25,9 +25,9 @@ PING_INTERVAL = int(environ.get("PING_INTERVAL", "1200"))  # 20 minutes
 DISABLE_CHANNEL_BUTTON = bool(environ.get('DISABLE_CHANNEL_BUTTON', False))
 HAS_SSL=bool(getenv('HAS_SSL',False))
 if HAS_SSL:
-    URL = "https://{}/".format(FQDN)
+    URL = "https://store-botnew.onrender.com/".format(FQDN)
 else:
-    URL = "http://{}/".format(FQDN)
+    URL = "https://store-botnew.onrender.com/".format(FQDN)
 UPDATES_CHANNEL = str(getenv('UPDATES_CHANNEL', None))
 BANNED_CHANNELS = list(set(int(x) for x in str(getenv("BANNED_CHANNELS", "-1001987654567")).split())) 
 STREAM_LOGS = environ.get('STREAM_LOGS','-1002021571773')
@@ -43,7 +43,7 @@ class Config(object):
 	DB_CHANNEL = int(os.environ.get("DB_CHANNEL", -1002021571773))
 	BOT_OWNER = int(os.environ.get("BOT_OWNER", "6646028262"))
 	DATABASE_URL = os.environ.get("DATABASE_URL","mongodb+srv://lazy:Zabintkhab7808@lazydev786.lpvunl5.mongodb.net/?retryWrites=true&w=majority")
-	UPDATES_CHANNEL = os.environ.get("UPDATES_CHANNEL", "-1001765107260")
+	UPDATES_CHANNEL = os.environ.get("UPDATES_CHANNEL", "")
 	LOG_CHANNEL = os.environ.get("LOG_CHANNEL", "-1002021571773")
 	BANNED_USERS = set(int(x) for x in os.environ.get("BANNED_USERS", "1234567890").split())
 	FORWARD_AS_COPY = bool(os.environ.get("FORWARD_AS_COPY", True))
