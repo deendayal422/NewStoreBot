@@ -3,7 +3,6 @@
 import os
 import asyncio
 import traceback
-lazy_pic = os.environ.get("LAZY_PIC","")
 from binascii import (
     Error
 )
