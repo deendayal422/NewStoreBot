@@ -128,8 +128,9 @@ async def Lazy_start():
                             InlineKeyboardButton("⎝⎝✧✧ ᴡᴀᴛᴄʜ ᴛᴜᴛᴏʀɪᴀʟ ✧✧⎠⎠", url="https://youtu.be/Rtjyz3lEZwE")
                         ]]))
             else :
-                await cmd.reply_photo(photo=lazy_pic,
-                caption=Config.HOME_TEXT.format(cmd.from_user.first_name, cmd.from_user.id),
+                await cmd.reply_text(
+                Config.HOME_TEXT.format(cmd.from_user.first_name, cmd.from_user.id),
+                disable_web_page_preview=True,
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
