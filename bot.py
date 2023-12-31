@@ -111,23 +111,22 @@ async def Lazy_start():
         usr_cmd = cmd.text.split("_", 1)[-1]
         if usr_cmd == "/start":
             await add_user_to_database(bot, cmd)
-            if :
-                await cmd.reply_text(
-                Config.HOME_TEXT.format(cmd.from_user.first_name, cmd.from_user.id),
-                disable_web_page_preview=True,
-                reply_markup=InlineKeyboardMarkup(
+            await cmd.reply_text(
+            Config.HOME_TEXT.format(cmd.from_user.first_name, cmd.from_user.id),
+            disable_web_page_preview=True,
+            reply_markup=InlineKeyboardMarkup(
+                [
                     [
-                        [
-                            InlineKeyboardButton("🍿supp⊕r† gr⊕up", url="https://t.me/LazyDeveloperSupport"),
-                            InlineKeyboardButton("🔊ß⊕†s chαηηεl", url="https://t.me/LazyDeveloper")
-                        ],
-                        [
-                            InlineKeyboardButton("🤖Aß⊕ut ß⊕†", callback_data="aboutbot"),
-                            InlineKeyboardButton("♥️Aß⊕ut Đ€V", callback_data="aboutdevs")
-                        ],
-                        [
-                            InlineKeyboardButton("⎝⎝✧✧ ᴡᴀᴛᴄʜ ᴛᴜᴛᴏʀɪᴀʟ ✧✧⎠⎠", url="https://youtu.be/Rtjyz3lEZwE")
-                        ]]))
+                        InlineKeyboardButton("🍿supp⊕r† gr⊕up", url="https://t.me/LazyDeveloperSupport"),
+                        InlineKeyboardButton("🔊ß⊕†s chαηηεl", url="https://t.me/LazyDeveloper")
+                    ],
+                    [
+                        InlineKeyboardButton("🤖Aß⊕ut ß⊕†", callback_data="aboutbot"),
+                        InlineKeyboardButton("♥️Aß⊕ut Đ€V", callback_data="aboutdevs")
+                    ],
+                    [
+                        InlineKeyboardButton("⎝⎝✧✧ ᴡᴀᴛᴄʜ ᴛᴜᴛᴏʀɪᴀʟ ✧✧⎠⎠", url="https://youtu.be/Rtjyz3lEZwE")
+                    ]]))
             
         else:
             try:
